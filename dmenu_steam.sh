@@ -20,7 +20,7 @@ depchecks(){
 }
 
 localfile(){
-    if [ ! -f $HOME/.cache/$filename ]; then
+    if [ ! -f $cache_dir/$filename ]; then
         curl "http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=$api_key&steamid=$steamid&include_appinfo=1&include_played_free_games=1&format=json" -o $cache_dir/$filename
     else
         if test `find "$cache_dir/$filename" -mtime +7`; then
