@@ -6,7 +6,7 @@ cd $HOME
 sudo apt update
 sudo apt install nala -y
 sudo nala upgrade -y
-sudo nala install unzip vim git tmux build-essential libxrandr-dev libxft-dev libxinerama-dev lightdm lightdm-gtk-greeter dmenu curl distrobox bluetooth bluez network-manager rsync picom -y
+sudo nala install unzip alacritty vim git tmux build-essential libxrandr-dev libxft-dev libxinerama-dev lightdm lightdm-gtk-greeter dmenu curl distrobox bluetooth bluez network-manager rsync picom -y
 if [ ! -d $HOME/github ]
 then
 	mkdir github
@@ -34,7 +34,7 @@ then
 fi
 if ! cat $HOME/.xsessionrc | grep .nix-profile/share
 then
-	echo 'export XDG_DATA_DIRS="$HOME/.nix-profile/share:$XDG_DATA_DIRS"' >> $HOME/.xsessionrc
+	echo 'export XDG_DATA_DIRS="$HOME/.nix-profile/share:$XDG_DATA_DIRS:/usr/share"' >> $HOME/.xsessionrc
 fi
 if ! cat $HOME/.xsessionrc | grep .nix-profile/bin
 then
